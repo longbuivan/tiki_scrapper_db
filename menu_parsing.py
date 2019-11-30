@@ -16,3 +16,5 @@ def menu_extract(link):
         # print(menu_list)
     return all_list
 
+print("the ingestion is done, please check file results")
+
