@@ -22,3 +22,4 @@ for link in all_category:
     print(logging.warning("processinng category %s:", category_link))
     pd.DataFrame(all_data).to_csv("C:\\Users\\longbv1\\Desktop\\Tiki_Scapper\\raw\\tiki-"+category_link+".csv", header=False, encoding="utf-8-sig", index=False)
 
+print("scrapping data done")
