@@ -5,7 +5,7 @@ import urllib
 import pandas as pd
 import logging
 
-
+# constructor contains product data
 class product_info:
     def __init__(self, brand, category, price, title, review, rating, prod_id):
         self.brand = brand
@@ -15,37 +15,36 @@ class product_info:
         self.review = review
         self.rating = rating
         self.prod_id = prod_id
-
+# constructore contains links of each product
 class product_link:
     def __init__(self, image, product):
         self.image = image
         self.product = product
-
-
+# got link extract from menu and number of page from main_build.py
 def process_page(link, i):
-    
     tuple_data = []
     tuple_data_page = []
+    # request url
     html = urlopen(link+i+"&page=")
+    # html paring
     bs = BeautifulSoup(html, 'html.parser')
     list_prod_id = bs.find_all(attrs={"data-seller-product-id": re.compile('.*')})
     
     for prod in list_prod_id:
-        
+        # extracting data with pattern
         data_id = prod.find("a", attrs={"data-id":re.compile('.*'), "href":re.compile('.*')})['data-id']
         data_brand = prod.attrs['data-brand']
         data_category = prod.attrs['data-category']
         data_price = prod.attrs['data-price']
         data_title = prod.attrs['data-title']
-        # the code seems perform slow here , need to optimize, ? ussing find instead of find_all
+        # fixing failed build if no review/rating data in
         try:
             data_review = prod.find("p", attrs={"class":"review"}).contents
             data_rating = prod.find("span", attrs={"style": re.compile('.*')})['style']
         except:
             data_review = ['null']
             data_rating = 'null'
-        # logging.warning("processing item: %s", data_title)
-
+        #store and append into tuple object
         product_data = product_info(brand=data_brand,category=data_category,price=data_price,title=data_title,
                                 review=data_review[0], rating=data_rating, prod_id=data_id)
 
@@ -67,14 +66,3 @@ def process_page(link, i):
         ])
         tuple_data_page.append(tuple_data)
     return tuple_data_page
-
-for i in range(1,15,1):
-    print(logging.error("processing page: %s", i))
-    data_df = (process_page(link, str(i)))
-    for data in data_df:
-        all_data.append(tuple([data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9
-        ]]))
-        
-df = pd.DataFrame(all_data)
-#should change directory in local or clound.
-df.to_csv("C:\\Users\\longbv1\\Desktop\\Tiki_Scapper\\raw\\tiki-"+category_link+".csv", header=False, encoding="utf-8-sig", index=False)
