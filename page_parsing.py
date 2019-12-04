@@ -68,15 +68,13 @@ def process_page(link, i):
         tuple_data_page.append(tuple_data)
     return tuple_data_page
 
-# for i in range(1,15,1):
-#     print(logging.error("processing page: %s", i))
-#     data_df = (process_page(link, str(i)))
-#     for data in data_df:
-#         all_data.append(tuple([data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9
-#         ]]))
+for i in range(1,15,1):
+    print(logging.error("processing page: %s", i))
+    data_df = (process_page(link, str(i)))
+    for data in data_df:
+        all_data.append(tuple([data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9
+        ]]))
         
-# df = pd.DataFrame(all_data)
-# df.to_csv("C:\\Users\\longbv1\\Desktop\\Tiki_Scapper\\raw\\tiki-"+category_link+".csv", header=False, encoding="utf-8-sig", index=False)
-# print(all_data)
-
-# print()
+df = pd.DataFrame(all_data)
+#should change directory in local or clound.
+df.to_csv("C:\\Users\\longbv1\\Desktop\\Tiki_Scapper\\raw\\tiki-"+category_link+".csv", header=False, encoding="utf-8-sig", index=False)
