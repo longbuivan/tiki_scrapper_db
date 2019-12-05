@@ -14,5 +14,5 @@ def menu_extract(link):
         all_list.append(menu['href'])
     return all_list
 # print on when a build done successfully
-print("the ingestion is done, please check file results")
+# print("the ingestion is done, please check file results")
 

@@ -1,0 +1,9 @@
+path:
+  website_path: https://tiki.vn/
+  save_path: C:\Users\longbv1\Desktop\Tiki_Scapper\raw\raw_data\tiki-
+page:  
+  page_number: 3
+dataframe:
+  header: False
+  encoding: "utf-8-sig"
+  index: False
