@@ -15,6 +15,12 @@ which one is faverous web page.
 
 # Next step:
   - add those data to cloud (data lake)
+	- use mysql for storing data:
+		- install and security config for mysql
+		- download and use python-msql connector
+		- create database and table
+		- connect to databse
+		- insert tiki data into table
   - clean raw data for useable
   - create pipeline for scheduling run
   - apply model, analysis

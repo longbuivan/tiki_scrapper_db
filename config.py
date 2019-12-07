@@ -22,7 +22,7 @@ class configObject:
 
 
 
-with open("config.yml", 'r') as ymlfile:
+with open("parse_config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
     for section in cfg:
         configObject.save_path = cfg['path']['save_path']
