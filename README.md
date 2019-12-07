@@ -1,26 +1,27 @@
-# Purpose: This project is trying to extract front end data of e-commercial website (https://tiki.vn)
-which one is faverous web page.
+# Purpose: This project is trying to store data that extracting in front-end into MySQL Database.
 
 # Technique:
   - Python
   - Framework: BeautifulSoup, urllib, pandas
+  - Database: Mysql 
+  - Evironment: Linux 16.04
+  - Editor: Vim
 
 # Workflow:
   - web extract url by category, an output is list of url
   - input each input into page_parsing, which is parsing data of every products on fixed number page.
-  - add those data into tuple object and convert to datafrae for futher cleans
-  - temporary save those file into csv file and stored in local.
+  - store raw data into MySQL
+  - MySQL use for creating database and table that should was set up seprately.
   
-# Output: raw data of products in tiki.vn by category
+# Output: 
+  - raw data of products in tiki.vn by category store in database.
 
 # Next step:
-  - add those data to cloud (data lake)
-	- use mysql for storing data:
-		- install and security config for mysql
-		- download and use python-msql connector
-		- create database and table
-		- connect to databse
-		- insert tiki data into table
   - clean raw data for useable
   - create pipeline for scheduling run
   - apply model, analysis
+  
+# NOTES:
+  - db_init.py MUST run first to initial set-up database on local.
+  - main_build.py should be run after that
+  - ALL INSTALLATION STEP IS NOT INCLUDED
