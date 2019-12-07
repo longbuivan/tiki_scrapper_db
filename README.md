@@ -4,7 +4,10 @@
   - Python
   - Framework: BeautifulSoup, urllib, pandas, pyyml
   - Database: Mysql
-	- install Mysql, MysqlConnector 
+	- install Mysql, MysqlConnector
+  - Database Management: phpMyadmin
+	- install phpmyadmin package for further manage databases
+	- use defail local IP and root user to login. 
   - Evironment: Linux 16.04
   - Editor: Vim
 
