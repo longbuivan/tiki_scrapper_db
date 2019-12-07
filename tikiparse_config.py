@@ -20,8 +20,6 @@ class configObject:
     def dataframe(self):
         return self.dataframe
 
-
-
 with open("parse_config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
     for section in cfg:

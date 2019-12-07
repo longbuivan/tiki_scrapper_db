@@ -13,10 +13,10 @@ def connect_db():
 			print('connection failed')
 	except Error as error:
 		print(error)
-#	finally:
-#		if conn is not None and conn.is_connected():
-#			conn.close()
-#			print('connection closed')
+	finally:
+		if conn is not None and conn.is_connected():
+			conn.close()
+			print('connection closed')
 
 if __name__ == '__main__':
 	connect_db()

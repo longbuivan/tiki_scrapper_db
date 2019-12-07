@@ -1,6 +1,6 @@
 path:
   website_path: https://tiki.vn/
-  save_path: C:\Users\longbv1\Desktop\Tiki_Scapper\raw\raw_data\tiki-
+  save_path: local-tiki-
 page:  
   page_number: 2
 dataframe:

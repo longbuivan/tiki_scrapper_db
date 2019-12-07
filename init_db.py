@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 
-db_execute = 'create database tiki_scrapper_db'
+# db_execute = 'create database tiki_scrapper_db'
 table_execute = 'create table products (id VARCHAR(255),\
 		brand VARCHAR(255),\
 		category TEXT(255),\

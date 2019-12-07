@@ -2,8 +2,9 @@
 
 # Technique:
   - Python
-  - Framework: BeautifulSoup, urllib, pandas
-  - Database: Mysql 
+  - Framework: BeautifulSoup, urllib, pandas, pyyml
+  - Database: Mysql
+	- install Mysql, MysqlConnector 
   - Evironment: Linux 16.04
   - Editor: Vim
 
@@ -22,6 +23,6 @@
   - apply model, analysis
   
 # NOTES:
-  - db_init.py MUST run first to initial set-up database on local.
+  - init_db.py MUST run first to initial set-up database on local.
   - main_build.py should be run after that
   - ALL INSTALLATION STEP IS NOT INCLUDED
